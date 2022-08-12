@@ -2,3 +2,29 @@ h1 {
   text-align: center;
   color: cornflowerblue;
 }
+#bread-spread {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#toilet {
+  width: 50%;
+  height: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+p {
+  text-align: center;
+}
+#thai {
+  width: 50%;
+  height: 40%;
+  margin: auto;
+}
+#bar {
+  width: 50%;
+  height: 40%;
+  margin: auto;
+}
