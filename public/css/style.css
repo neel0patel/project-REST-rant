@@ -18,13 +18,47 @@ h1 {
 p {
   text-align: center;
 }
-#thai {
-  width: 50%;
-  height: 40%;
+.myPic {
+  width: auto;
+  height: 60%;
   margin: auto;
+  display: block;
 }
-#bar {
-  width: 50%;
-  height: 40%;
-  margin: auto;
+
+nav {
+  background-color: cornflowerblue;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  color: pink;
+  text-decoration: none;
+}
+body {
+  background-color: cornflowerblue;
+  text-align: center;
+}
+
+main {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: white;
+  border-style: groove;
+  border-color: black;
 }
