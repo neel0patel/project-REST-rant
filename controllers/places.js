@@ -26,7 +26,14 @@ router.post("/", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  res.render("places/new");
+  db.Place.find()
+    .then((places) => {
+      res.render("places/new", { places });
+    })
+    .catch((err) => {
+      console.log("err", err);
+      res.render("error404");
+    });
 });
 
 router.get("/:id", (req, res) => {
