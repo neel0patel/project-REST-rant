@@ -13,7 +13,7 @@ function seed() {
       founded: 1989,
     },
     {
-      name: "Coding Cat Cafe",
+      name: "Coding Dog Cafe",
       city: "Phoenix",
       state: "AZ",
       cuisines: "Coffee, Bakery",
