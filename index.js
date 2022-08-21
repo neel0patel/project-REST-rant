@@ -19,6 +19,9 @@ mongoose.connect(
   function (err, connection) {
     // connection.db('breads');
     console.log("connected to DB!!");
+
+    const seed = require("./seeders/seed-places");
+    //seed();
   }
 );
 
@@ -32,6 +35,7 @@ app.get("/", (req, res) => {
 app.get("*", (req, res) => {
   res.render("error404");
 });
+
 // Listen for Connections
 app.listen(process.env.PORT, function () {
   console.log("Server is alive!");
