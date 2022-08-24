@@ -1,7 +1,5 @@
 const db = require("../models");
 
-console.log("this is DB", db.Place);
-
 function seed() {
   db.Place.create([
     {

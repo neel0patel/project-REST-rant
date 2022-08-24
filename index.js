@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
+const seed = require("./seeders/seed-places");
 
 // Express Settings
 app.set("views", __dirname + "/views");
@@ -13,19 +14,47 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-mongoose.connect(
-  process.env.MONGO_URI,
-  { family: 4 },
-  function (err, connection) {
-    // connection.db('breads');
-    console.log("connected to DB!!");
+mongoose
+  .connect(
+    process.env.MONGO_URI,
+    {
+      // server: {
+      //   socketOptions: {
+      //     socketTimeoutMS: 0,
+      //     connectionTimeout: 0,
+      //   },
+      // },
+    },
+    { family: 4 }
 
-    const seed = require("./seeders/seed-places");
-    //seed();
-  }
-);
+    //   function (err, connection) {
+    //     // const db = require("./models");
+    //     // connection.db('breads');
+    //     console.log(
+    //       "mongoose.connection.readyState",
+    //       mongoose.connection.readyState
+    //     );
+    //     console.log("connected to DB!!!!!!");
 
-// Controllers & Routes
+    //     // Controllers & Routes
+
+    //     // try {
+    //     //   let place = await db.Place.find();
+    //     //   console.log("Place!!!!", place);
+    //     // } catch (err) {
+    //     //   console.log("ERRR from place find;", err);
+    //     // }
+
+    //     // const seedPlaces = require("./seeders/seed-places");
+    //     // const seedComments = require("./seeders/seed-comments.js");
+    //     // seedComments();
+    //     // seedPlaces();
+    //   }
+  )
+  .then(function () {
+    console.log("we r connected to dB!");
+  });
+
 app.use("/places", require("./controllers/places"));
 
 app.get("/", (req, res) => {
