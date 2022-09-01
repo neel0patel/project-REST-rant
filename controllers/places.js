@@ -39,16 +39,17 @@ router.get("/new", (req, res) => {
 router.get("/:id", (req, res) => {
   db.Place.findById(req.params.id)
     .populate("comments")
-    .then((placeWeFound) => {
-      res.render("places/show", { place: placeWeFound });
+    .then((place) => {
+      console.log(place.comments);
+      res.render("places/show", { place });
     })
     .catch((err) => {
       console.log("err", err);
       res.render("error404");
     });
-
-  //res.send("GET /places/:id stub");
 });
+
+//res.send("GET /places/:id stub");
 
 router.post("/:id/comment", (req, res) => {
   console.log(req.body);
